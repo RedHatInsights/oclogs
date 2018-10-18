@@ -118,7 +118,7 @@ class Event(Resource):
 
     def __init__(self, d):
         super().__init__(d)
-        self.count = d["count"]
+        self.count = d.get("count")
         self.first_seen = arrow.get(d["firstTimestamp"])
         self.last_seen = arrow.get(d["lastTimestamp"])
         self.obj = d["involvedObject"]
